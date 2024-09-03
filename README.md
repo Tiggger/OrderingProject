@@ -7,6 +7,7 @@ You want to initialise the object, providing it with the directory where the sim
 
 To process multiple simulations to calculate the average behaviour of these, you must iterate through the files in the directory where you save the simulation data. The code I wrote to do this looks like:
 
+```python
 import os
 directory = 'directorytosimulation/data' #ensure that in this directory, the simulations are there and also the params.txt file
 numSims = 301 
