@@ -8,25 +8,25 @@ You want to initialise the object, providing it with the directory where the sim
 To process multiple simulations to calculate the average behaviour of these, you must iterate through the files in the directory where you save the simulation data. The code I wrote to do this looks like:
 
 ```python
-import os
-directory = 'directorytosimulation/data' #ensure that in this directory, the simulations are there and also the params.txt file
-numSims = 301 
-
-file_names = [os.path.join(directory, f'sim{i}.txt') for i in range(numSims)]
-instances = [simulationData(file) for file in file_names]
-
-#list to hold data of all simulations
-orderings=[] #holds the ordering information of each simulation, the length of this list should be the same as numSims
-
-for instance in instances:
-
-    instance.getInfo()
-
-    #calculate some value
-    ordering=instance.calculateOrdering
-
-#calculating the average of all 300 simulations
-avgOrdering=np.average(orderings, axis=0) #ensure to add axis=0 to calculate the average of each of the 0th items, each of the 1st item in the list etc
+    import os
+    directory = 'directorytosimulation/data' #ensure that in this directory, the simulations are there and also the params.txt file
+    numSims = 301 
+    
+    file_names = [os.path.join(directory, f'sim{i}.txt') for i in range(numSims)]
+    instances = [simulationData(file) for file in file_names]
+    
+    #list to hold data of all simulations
+    orderings=[] #holds the ordering information of each simulation, the length of this list should be the same as numSims
+    
+    for instance in instances:
+    
+        instance.getInfo()
+    
+        #calculate some value
+        ordering=instance.calculateOrdering
+    
+    #calculating the average of all 300 simulations
+    avgOrdering=np.average(orderings, axis=0) #ensure to add axis=0 to calculate the average of each of the 0th items, each of the 1st item in the list etc
 
 # findClosestRelative
 
