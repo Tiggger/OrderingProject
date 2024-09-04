@@ -24,6 +24,7 @@ for instance in instances:
 
     #calculate some value
     ordering=instance.calculateOrdering
+    orderings.append(ordering)
 
 #calculating the average of all 300 simulations
 avgOrdering=np.average(orderings, axis=0) #ensure to add axis=0 to calculate the average of each of the 0th items, each of the 1st item in the list etc
