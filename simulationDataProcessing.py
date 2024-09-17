@@ -158,16 +158,14 @@ class simulationData():
         for key in self.timeStepData[-1].keys():
             if key[0]=='1':
                 strainOneSurvive=True
-                break
             elif key[0]=='0':
                 strainZeroSurvive=True
-                break
          
         #categorising outcome
         if strainOneSurvive==True and strainZeroSurvive==True:
             self.result=2 #2 for coexist
         elif strainOneSurvive==True and strainZeroSurvive==False:
-            self.result=1 
+            self.result=1
         elif strainOneSurvive==False and strainZeroSurvive==True:
             self.result=0
         
