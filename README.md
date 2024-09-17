@@ -23,7 +23,7 @@ for instance in instances:
     instance.getInfo()
 
     #calculate some value
-    ordering=instance.calculateOrdering
+    ordering=instance.calculateOrdering()
     orderings.append(ordering)
 
 #calculating the average of all 300 simulations
